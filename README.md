@@ -1,6 +1,6 @@
 # Portfolio 2.0
 
-A modern, CSS-based portfolio website showcasing data engineering, cloud computing, machine learning, and data science projects. Migrated from MkDocs to a custom Sass-powered single-page application.
+A modern, CSS-based portfolio website showcasing data engineering, AI integration, and cloud computing projects. Migrated from MkDocs to a custom Sass-powered single-page application.
 
 ## 🎨 Features
 
@@ -84,9 +84,8 @@ portfolio2/
 
 ### Sections
 - **Hero**: Animated introduction with CTA buttons
-- **Data Engineering**: 3 featured projects
-- **Data Science**: Statistical distributions & hypothesis testing
-- **Machine Learning**: Heart disease prediction
+- **Data Engineering**: 3 featured projects (Data Lake, Streaming, AWS Pipeline)
+- **AI Integration**: Analytics chatbots and AI-powered insights
 - **Cloud Computing**: 5 AWS/Terraform projects
 - **About**: Skills grouped by category with tech stack
 
@@ -97,8 +96,20 @@ portfolio2/
 
 ## 🌐 Deployment
 
-The site is a static website and can be deployed to:
-- GitHub Pages
+### GitHub Pages (Automated)
+
+The site is configured with GitHub Actions for automatic deployment:
+1. Push changes to the `main` branch
+2. GitHub Actions automatically compiles Sass and deploys
+3. Site is available at `https://bytes0211.github.io/portfolio2/`
+
+**Manual GitHub Pages Setup** (if needed):
+1. Go to repository Settings → Pages
+2. Source: "GitHub Actions"
+3. Push to `main` branch to trigger deployment
+
+### Other Hosting Options
+The site can also be deployed to:
 - Netlify
 - Vercel
 - AWS S3 + CloudFront

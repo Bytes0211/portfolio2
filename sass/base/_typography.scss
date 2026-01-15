@@ -1,0 +1,82 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+// Google Fonts Import
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;600;700;800&family=Red+Hat+Mono:wght@400;500;600&display=swap');
+
+// Headings
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: $line-height-heading;
+  margin-bottom: $spacing-md;
+  color: var(--text-color);
+}
+
+h1 {
+  font-size: $font-size-h1;
+  font-weight: 800;
+  
+  @include mobile {
+    font-size: $font-size-h2;
+  }
+}
+
+h2 {
+  font-size: $font-size-h2;
+  
+  @include mobile {
+    font-size: $font-size-h3;
+  }
+}
+
+h3 {
+  font-size: $font-size-h3;
+  
+  @include mobile {
+    font-size: $font-size-h4;
+  }
+}
+
+h4 {
+  font-size: $font-size-h4;
+  
+  @include mobile {
+    font-size: $font-size-xl;
+  }
+}
+
+// Paragraphs
+p {
+  margin-bottom: $spacing-md;
+  color: var(--text-color);
+  
+  &.lead {
+    font-size: $font-size-lg;
+    color: var(--text-muted);
+  }
+  
+  &.small {
+    font-size: $font-size-sm;
+  }
+}
+
+// Code
+code, pre {
+  font-family: $font-code;
+  font-size: $font-size-sm;
+}
+
+code {
+  background: var(--bg-secondary);
+  padding: 2px 6px;
+  border-radius: $radius-sm;
+}
+
+// Strong and emphasis
+strong {
+  font-weight: 600;
+}
+
+em {
+  font-style: italic;
+}

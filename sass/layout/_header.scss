@@ -1,0 +1,145 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--bg-color);
+  box-shadow: $shadow-sm;
+  transition: background-color $transition-base;
+  
+  &__container {
+    @include container;
+    @include flex-between;
+    padding-top: $spacing-md;
+    padding-bottom: $spacing-md;
+  }
+  
+  &__logo {
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+    font-size: $font-size-xl;
+    font-weight: 700;
+    color: var(--text-color);
+    
+    img {
+      width: 32px;
+      height: 32px;
+    }
+  }
+  
+  &__nav {
+    @include mobile {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 70%;
+      height: 100vh;
+      background: var(--bg-color);
+      padding: $spacing-xxl $spacing-lg;
+      transition: right $transition-base $easing-standard;
+      box-shadow: $shadow-xl;
+      
+      &.active {
+        right: 0;
+      }
+    }
+  }
+  
+  &__nav-list {
+    display: flex;
+    gap: $spacing-lg;
+    
+    @include mobile {
+      flex-direction: column;
+      gap: $spacing-md;
+    }
+  }
+  
+  &__nav-link {
+    position: relative;
+    font-size: $font-size-base;
+    font-weight: 600;
+    color: var(--text-color);
+    padding: $spacing-xs 0;
+    transition: color $transition-fast;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: $primary-color;
+      transition: width $transition-base $easing-standard;
+    }
+    
+    &:hover, &.active {
+      color: $primary-color;
+      
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+  
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: $spacing-md;
+  }
+  
+  &__theme-toggle {
+    @include flex-center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--bg-secondary);
+    color: var(--text-color);
+    transition: all $transition-fast;
+    font-size: 20px;
+    
+    &:hover {
+      background: $primary-color;
+      color: white;
+      transform: rotate(180deg);
+    }
+  }
+  
+  &__hamburger {
+    display: none;
+    @include flex-column;
+    gap: 5px;
+    width: 30px;
+    z-index: 1001;
+    
+    @include mobile {
+      display: flex;
+    }
+    
+    span {
+      width: 100%;
+      height: 3px;
+      background: var(--text-color);
+      transition: all $transition-base;
+      border-radius: 2px;
+    }
+    
+    &.active {
+      span:nth-child(1) {
+        transform: rotate(45deg) translate(8px, 8px);
+      }
+      
+      span:nth-child(2) {
+        opacity: 0;
+      }
+      
+      span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -7px);
+      }
+    }
+  }
+}

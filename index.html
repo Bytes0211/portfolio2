@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Steven Cotton - Data Engineer | Cloud Architect | Infrastructure as Code Specialist">
+    <title>Steven Cotton | Portfolio</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="dist/css/main.css">
+</head>
+<body data-theme="dark">
+    <!-- Header -->
+    <header class="header">
+        <div class="header__container">
+            <a href="#" class="header__logo">
+                <img src="assets/favicon.png" alt="Logo">
+                <span>Portfolio</span>
+            </a>
+            
+            <nav class="header__nav" id="nav">
+                <ul class="header__nav-list">
+                    <li><a href="#home" class="header__nav-link active">Home</a></li>
+                    <li><a href="#data-engineering" class="header__nav-link">Data Engineering</a></li>
+                    <li><a href="#data-science" class="header__nav-link">Data Science</a></li>
+                    <li><a href="#machine-learning" class="header__nav-link">Machine Learning</a></li>
+                    <li><a href="#cloud-computing" class="header__nav-link">Cloud Computing</a></li>
+                    <li><a href="#about" class="header__nav-link">About</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header__actions">
+                <button class="header__theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="header__hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero__content">
+            <h1 class="hero__name">Steven Cotton</h1>
+            <h2 class="hero__title">Data Engineer | Cloud Architect | Infrastructure as Code Specialist</h2>
+            <p class="hero__description">
+                Home of passionate, thoughtful energy expressed through code
+            </p>
+            <div class="hero__cta">
+                <a href="#data-engineering" class="btn btn--primary">View Projects</a>
+                <a href="#about" class="btn btn--secondary">About Me</a>
+            </div>
+        </div>
+        <div class="hero__scroll" onclick="document.getElementById('data-engineering').scrollIntoView({behavior: 'smooth'})">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- Data Engineering Section -->
+    <section class="section" id="data-engineering">
+        <div class="section__container">
+            <div class="section__header">
+                <h2 class="section__title">🔄 Data Engineering</h2>
+                <p class="section__subtitle">End-to-end data pipeline implementations with modern cloud-native technologies</p>
+            </div>
+            
+            <div class="project-grid">
+                <article class="project-card">
+                    <div class="project-card__icon">☁️</div>
+                    <h3 class="project-card__title">AutoCorp Cloud Data Lake Pipeline</h3>
+                    <p class="project-card__description">
+                        An end-to-end AWS Data Lake Pipeline implementing modern data lakehouse architecture with CDC replication, serverless ETL, open table formats, and Infrastructure as Code.
+                    </p>
+                    <div class="project-card__tech-stack">
+                        <span class="project-card__tech-badge">AWS</span>
+                        <span class="project-card__tech-badge">Apache Hudi</span>
+                        <span class="project-card__tech-badge">Terraform</span>
+                        <span class="project-card__tech-badge">PySpark</span>
+                        <span class="project-card__tech-badge">PostgreSQL</span>
+                    </div>
+                    <ul class="project-card__features">
+                        <li>3-layer data lakehouse (Raw → Curated)</li>
+                        <li>CDC replication with AWS DMS</li>
+                        <li>&lt;15min data latency</li>
+                        <li>95% IaC automation with Terraform</li>
+                    </ul>
+                    <a href="#" class="project-card__link">
+                        View Details <i class="fas fa-arrow-right"></i>
+                    </a>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-card__icon">⚡</div>
+                    <h3 class="project-card__title">StreamForge Real-Time Streaming</h3>
+                    <p class="project-card__description">
+                        A real-time data streaming and processing platform demonstrating modern stream processing architecture with Apache Kafka, Apache Flink, and dual deployment models.
+                    </p>
+                    <div class="project-card__tech-stack">
+                        <span class="project-card__tech-badge">Kafka</span>
+                        <span class="project-card__tech-badge">Apache Flink</span>
+                        <span class="project-card__tech-badge">MongoDB</span>
+                        <span class="project-card__tech-badge">Docker</span>
+                        <span class="project-card__tech-badge">Java</span>
+                    </div>
+                    <ul class="project-card__features">
+                        <li>Event-driven streaming architecture</li>
+                        <li>Custom MongoDB sink with lifecycle management</li>
+                        <li>Complete Docker orchestration (5 services)</li>
+                        <li>Dual deployment (local + AWS)</li>
+                    </ul>
+                    <a href="#" class="project-card__link">
+                        View Details <i class="fas fa-arrow-right"></i>
+                    </a>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-card__icon">🔄</div>
+                    <h3 class="project-card__title">AWS Data Lake Pipeline</h3>
+                    <p class="project-card__description">
+                        An event-driven AWS Data Lake Pipeline built with Infrastructure as Code principles, demonstrating production-ready architecture for data ingestion and transformation.
+                    </p>
+                    <div class="project-card__tech-stack">
+                        <span class="project-card__tech-badge">Terraform</span>
+                        <span class="project-card__tech-badge">AWS Lambda</span>
+                        <span class="project-card__tech-badge">S3</span>
+                        <span class="project-card__tech-badge">EventBridge</span>
+                        <span class="project-card__tech-badge">Python</span>
+                    </div>
+                    <ul class="project-card__features">
+                        <li>3-layer data lake architecture</li>
+                        <li>Event-driven processing with S3 triggers</li>
+                        <li>Complete IaC with Terraform</li>
+                        <li>Serverless ETL with Lambda</li>
+                    </ul>
+                    <a href="#" class="project-card__link">
+                        View Details <i class="fas fa-arrow-right"></i>
+                    </a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Data Science Section -->
+    <section class="section" id="data-science" style="background: var(--bg-secondary);">
+        <div class="section__container">
+            <div class="section__header">
+                <h2 class="section__title">📊 Data Science</h2>
+                <p class="section__subtitle">Statistical analysis, probability distributions, and hypothesis testing implementations</p>
+            </div>
+            
+            <div class="project-grid">
+                <article class="project-card">
+                    <div class="project-card__icon">📈</div>
+                    <h3 class="project-card__title">Statistical Distributions</h3>
+                    <p class="project-card__description">
+                        Comprehensive collection of 12 interactive Jupyter notebooks covering probability distributions, sampling, and transformations.
+                    </p>
+                    <div class="project-card__tech-stack">
+                        <span class="project-card__tech-badge">Python</span>
+                        <span class="project-card__tech-badge">Jupyter</span>
+                        <span class="project-card__tech-badge">NumPy</span>
+                        <span class="project-card__tech-badge">SciPy</span>
+                    </div>
+                    <ul class="project-card__features">
+                        <li>Discrete & continuous distributions</li>
+                        <li>Sampling and transformations</li>
+                        <li>T-Distribution analysis</li>
+                        <li>Interactive visualizations</li>
+                    </ul>
+                    <a href="#" class="project-card__link">
+                        View Notebooks <i class="fas fa-arrow-right"></i>
+                    </a>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-card__icon">🔬</div>
+                    <h3 class="project-card__title">Hypothesis Testing</h3>
+                    <p class="project-card__description">
+                        Complete guide to hypothesis testing with 5 notebooks covering p-values, t-tests, chi-squared tests, and regression testing.
+                    </p>
+                    <div class="project-card__tech-stack">
+                        <span class="project-card__tech-badge">Python</span>
+                        <span class="project-card__tech-badge">statsmodels</span>
+                        <span class="project-card__tech-badge">scipy</span>
+                        <span class="project-card__tech-badge">matplotlib</span>
+                    </div>
+                    <ul class="project-card__features">
+                        <li>P-value introduction</li>
+                        <li>One-tail and two-tail tests</li>
+                        <li>Chi-squared analysis</li>
+                        <li>Regression hypothesis testing</li>
+                    </ul>
+                    <a href="#" class="project-card__link">
+                        View Notebooks <i class="fas fa-arrow-right"></i>
+                    </a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Machine Learning Section -->
+    <section class="section" id="machine-learning">
+        <div class="section__container">
+            <div class="section__header">
+                <h2 class="section__title">🤖 Machine Learning</h2>
+                <p class="section__subtitle">Complete ML pipelines with comprehensive data analysis and model optimization</p>
+            </div>
+            
+            <div class="project-grid">
+                <article class="project-card">
+                    <div class="project-card__icon">🫀</div>
+                    <h3 class="project-card__title">Heart Disease Prediction</h3>
+                    <p class="project-card__description">
+                        A comprehensive machine learning project demonstrating a complete ML pipeline for predicting heart disease using k-Nearest Neighbors classification.
+                    </p>
+                    <div class="project-card__tech-stack">
+                        <span class="project-card__tech-badge">Python</span>
+                        <span class="project-card__tech-badge">scikit-learn</span>
+                        <span class="project-card__tech-badge">pandas</span>
+                        <span class="project-card__tech-badge">seaborn</span>
+                    </div>
+                    <ul class="project-card__features">
+                        <li>Comprehensive EDA with correlation analysis</li>
+                        <li>k-NN with GridSearchCV optimization</li>
+                        <li>Multi-metric evaluation (accuracy, precision, recall, AUC)</li>
+                        <li>Feature engineering and median imputation</li>
+                    </ul>
+                    <a href="#" class="project-card__link">
+                        View Project <i class="fas fa-arrow-right"></i>
+                    </a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cloud Computing Section -->
+    <section class="section" id="cloud-computing" style="background: var(--bg-secondary);">
+        <div class="section__container">
+            <div class="section__header">
+                <h2 class="section__title">☁️ Cloud Computing</h2>
+                <p class="section__subtitle">AWS and Terraform projects with practical implementations and automation</p>
+            </div>
+            
+            <div class="project-grid">
+                <article class="project-card">
+                    <div class="project-card__icon">📦</div>
+                    <h3 class="project-card__title">DynamoDB Inventory System</h3>
+                    <p class="project-card__description">
+                        Advanced NoSQL project demonstrating single table design, Global Secondary Indexes, transactions, and comprehensive testing with 20+ unit tests.
+                    </p>
+                    <div class="project-card__tech-stack">
+                        <span class="project-card__tech-badge">DynamoDB</span>
+                        <span class="project-card__tech-badge">Python</span>
+                        <span class="project-card__tech-badge">Boto3</span>
+                        <span class="project-card__tech-badge">pytest</span>
+                    </div>
+                    <ul class="project-card__features">
+                        <li>Single table design pattern</li>
+                        <li>GSI for complex queries</li>
+                        <li>Transaction support</li>
+                        <li>20+ comprehensive unit tests</li>
+                    </ul>
+                    <a href="#" class="project-card__link">
+                        View Details <i class="fas fa-arrow-right"></i>
+                    </a>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-card__icon">🔧</div>
+                    <h3 class="project-card__title">AWS Management Library</h3>
+                    <p class="project-card__description">
+                        Comprehensive Python library for managing AWS services (Lambda, S3, EC2, DynamoDB) with local development support and comprehensive testing.
+                    </p>
+                    <div class="project-card__tech-stack">
+                        <span class="project-card__tech-badge">Python</span>
+                        <span class="project-card__tech-badge">Boto3</span>
+                        <span class="project-card__tech-badge">pytest</span>
+                        <span class="project-card__tech-badge">moto</span>
+                    </div>
+                    <ul class="project-card__features">
+                        <li>Multi-service AWS operations</li>
+                        <li>Local DynamoDB support</li>
+                        <li>Table migration utilities</li>
+                        <li>16+ unit tests</li>
+                    </ul>
+                    <a href="#" class="project-card__link">
+                        View Details <i class="fas fa-arrow-right"></i>
+                    </a>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-card__icon">📄</div>
+                    <h3 class="project-card__title">AWS File Validator</h3>
+                    <p class="project-card__description">
+                        Serverless Java application that validates file formats (CSV/JSON) using AWS Lambda with extensible architecture for multiple validation strategies.
+                    </p>
+                    <div class="project-card__tech-stack">
+                        <span class="project-card__tech-badge">Java 11</span>
+                        <span class="project-card__tech-badge">AWS Lambda</span>
+                        <span class="project-card__tech-badge">S3</span>
+                        <span class="project-card__tech-badge">Maven</span>
+                    </div>
+                    <ul class="project-card__features">
+                        <li>CSV/JSON validation</li>
+                        <li>Extensible architecture</li>
+                        <li>S3 integration</li>
+                        <li>Local testing support</li>
+                    </ul>
+                    <a href="#" class="project-card__link">
+                        View Details <i class="fas fa-arrow-right"></i>
+                    </a>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-card__icon">🏭</div>
+                    <h3 class="project-card__title">Terraform AWS Product App</h3>
+                    <p class="project-card__description">
+                        Complete Infrastructure as Code using Terraform to deploy a full-stack product management application with VPC networking and automated deployment.
+                    </p>
+                    <div class="project-card__tech-stack">
+                        <span class="project-card__tech-badge">Terraform</span>
+                        <span class="project-card__tech-badge">AWS</span>
+                        <span class="project-card__tech-badge">Spring Boot</span>
+                        <span class="project-card__tech-badge">DynamoDB</span>
+                    </div>
+                    <ul class="project-card__features">
+                        <li>VPC networking architecture</li>
+                        <li>Full-stack IaC deployment</li>
+                        <li>EC2 and Lambda integration</li>
+                        <li>Automated infrastructure provisioning</li>
+                    </ul>
+                    <a href="#" class="project-card__link">
+                        View Details <i class="fas fa-arrow-right"></i>
+                    </a>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-card__icon">⚙️</div>
+                    <h3 class="project-card__title">Scotton AWS Utils</h3>
+                    <p class="project-card__description">
+                        Comprehensive Python package for AWS service operations with unified interface for S3, Lambda, EC2, IAM, and DynamoDB with advanced transaction support.
+                    </p>
+                    <div class="project-card__tech-stack">
+                        <span class="project-card__tech-badge">Python</span>
+                        <span class="project-card__tech-badge">Boto3</span>
+                        <span class="project-card__tech-badge">pip</span>
+                    </div>
+                    <ul class="project-card__features">
+                        <li>Multi-service support</li>
+                        <li>Advanced DynamoDB operations</li>
+                        <li>Transaction support</li>
+                        <li>Local testing capabilities</li>
+                    </ul>
+                    <a href="#" class="project-card__link">
+                        View Details <i class="fas fa-arrow-right"></i>
+                    </a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about" id="about">
+        <div class="section__container">
+            <div class="section__header">
+                <h2 class="section__title">👤 About Me</h2>
+            </div>
+            
+            <div class="about__content">
+                <p class="about__text">
+                    Hi, I'm Steven 👋 I'm a Data Engineer passionate about building scalable, reliable, and governed data platforms. 
+                    I specialize in designing data lake architectures with open table formats (Iceberg, Delta Lake, Hudi) and automating 
+                    ETL pipelines on AWS. I have recently added AI skills with the implementation of chat boxes to the Analytics sections of my work.
+                </p>
+
+                <h3 style="margin-bottom: 1.5rem; color: var(--text-color);">🛠️ Tech Stack</h3>
+                <div class="about__skills">
+                    <div class="about__skill-group">
+                        <h4>Languages</h4>
+                        <ul>
+                            <li>Python</li>
+                            <li>Java</li>
+                            <li>SQL</li>
+                            <li>Bash</li>
+                            <li>HCL (Terraform)</li>
+                            <li>PySpark</li>
+                        </ul>
+                    </div>
+
+                    <div class="about__skill-group">
+                        <h4>Cloud & Infrastructure</h4>
+                        <ul>
+                            <li>AWS (DMS, Glue, Athena, Lambda, S3)</li>
+                            <li>Terraform (95% automation)</li>
+                            <li>Docker & Docker Compose</li>
+                            <li>Infrastructure as Code</li>
+                        </ul>
+                    </div>
+
+                    <div class="about__skill-group">
+                        <h4>Data Engineering</h4>
+                        <ul>
+                            <li>Apache Kafka</li>
+                            <li>Apache Flink</li>
+                            <li>Apache Hudi</li>
+                            <li>PySpark</li>
+                            <li>Stream Processing</li>
+                            <li>CDC Replication</li>
+                        </ul>
+                    </div>
+
+                    <div class="about__skill-group">
+                        <h4>Databases</h4>
+                        <ul>
+                            <li>PostgreSQL</li>
+                            <li>DynamoDB</li>
+                            <li>MongoDB</li>
+                        </ul>
+                    </div>
+
+                    <div class="about__skill-group">
+                        <h4>Data Science & ML</h4>
+                        <ul>
+                            <li>Pandas</li>
+                            <li>scikit-learn</li>
+                            <li>Statistical Analysis</li>
+                            <li>Jupyter Notebooks</li>
+                        </ul>
+                    </div>
+
+                    <div class="about__skill-group">
+                        <h4>Tools</h4>
+                        <ul>
+                            <li>Git</li>
+                            <li>Maven</li>
+                            <li>pytest</li>
+                            <li>AWS CLI</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3 style="margin: 2rem 0 1rem; color: var(--text-color);">🎯 Goals</h3>
+                <p class="about__text">
+                    Master transactional data lake governance for reproducible analytics • Build robust, auditable data catalogs 
+                    that scale with business needs • Go beyond the basics with streaming tools such as Kafka, Flink, and Kinesis • 
+                    Add more ML and AI experience to my skill set
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__social">
+                <a href="https://www.linkedin.com/in/steven-cotton-7948157" target="_blank" class="footer__social-link" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://bsky.app/profile/stevenwcotton.bsky.social" target="_blank" class="footer__social-link" aria-label="Bluesky">
+                    <i class="fab fa-bluesky"></i>
+                </a>
+                <a href="mailto:stevenwcotton@gmail.com" class="footer__social-link" aria-label="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+            <p class="footer__copyright">
+                Copyright &copy; 2018 - 2025 Steven Cotton
+            </p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>

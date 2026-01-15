@@ -1,0 +1,152 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.hero {
+  min-height: 60vh;
+  @include flex-center;
+  @include flex-column;
+  text-align: center;
+  padding: $spacing-xxl $spacing-md;
+  background: var(--hero-gradient);
+  position: relative;
+  
+  @include desktop {
+    min-height: 70vh;
+  }
+  
+  &__content {
+    @include container;
+    max-width: 800px;
+  }
+  
+  &__name {
+    font-size: $font-size-h1;
+    font-weight: 800;
+    margin-bottom: $spacing-md;
+    @include fade-in($transition-slow, 0.2s);
+    
+    @include mobile {
+      font-size: $font-size-h2;
+    }
+  }
+  
+  &__title {
+    font-size: $font-size-h3;
+    font-weight: 600;
+    color: $primary-color;
+    margin-bottom: $spacing-lg;
+    @include fade-in($transition-slow, 0.4s);
+    
+    @include mobile {
+      font-size: $font-size-h4;
+    }
+  }
+  
+  &__description {
+    font-size: $font-size-lg;
+    color: var(--text-muted);
+    margin-bottom: $spacing-xl;
+    line-height: 1.8;
+    @include fade-in($transition-slow, 0.6s);
+  }
+  
+  &__cta {
+    display: flex;
+    gap: $spacing-md;
+    justify-content: center;
+    flex-wrap: wrap;
+    @include fade-in($transition-slow, 0.8s);
+  }
+  
+  &__scroll {
+    position: absolute;
+    bottom: $spacing-xl;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 32px;
+    color: var(--text-muted);
+    animation: bounce 2s infinite;
+    cursor: pointer;
+  }
+}
+
+.section {
+  padding: $spacing-xxl 0;
+  
+  &__container {
+    @include container;
+  }
+  
+  &__header {
+    text-align: center;
+    margin-bottom: $spacing-xl;
+  }
+  
+  &__title {
+    font-size: $font-size-h2;
+    margin-bottom: $spacing-md;
+    
+    @include mobile {
+      font-size: $font-size-h3;
+    }
+  }
+  
+  &__subtitle {
+    font-size: $font-size-lg;
+    color: var(--text-muted);
+    max-width: 700px;
+    margin: 0 auto;
+  }
+}
+
+.about {
+  background: var(--bg-secondary);
+  
+  &__content {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  &__text {
+    font-size: $font-size-lg;
+    line-height: 1.8;
+    margin-bottom: $spacing-xl;
+  }
+  
+  &__skills {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-lg;
+    
+    @include tablet-up {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    @include desktop {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  &__skill-group {
+    @include card-base;
+    
+    h4 {
+      color: $primary-color;
+      margin-bottom: $spacing-md;
+    }
+    
+    ul {
+      li {
+        padding: $spacing-xs 0;
+        color: var(--text-muted);
+        list-style: none;
+        
+        &::before {
+          content: '▸';
+          color: $primary-color;
+          margin-right: $spacing-xs;
+        }
+      }
+    }
+  }
+}

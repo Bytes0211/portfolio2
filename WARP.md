@@ -99,3 +99,35 @@ When editing JavaScript:
 
 ## Deployment
 Static site - no build step beyond Sass compilation. Deploy `index.html`, `dist/`, `js/`, and `assets/` to any static host (GitHub Pages, Netlify, Vercel, S3).
+
+## Git Commit Convention
+
+Use conventional commit format: `type(scope): brief description`
+
+### Commit Types
+- **feat**: New feature or functionality
+- **fix**: Bug fix
+- **docs**: Documentation changes
+- **refactor**: Code refactoring without functionality change
+- **test**: Adding or updating tests
+- **chore**: Maintenance tasks (dependencies, config, infrastructure)
+- **perf**: Performance improvements
+- **style**: Code style/formatting changes
+
+### Project Scopes
+- **sass**: Sass/SCSS styling changes
+- **js**: JavaScript functionality
+- **html**: HTML structure changes
+- **assets**: Images, fonts, or other static assets
+- **nav**: Navigation components
+- **theme**: Theme/theming system
+- **responsive**: Responsive design changes
+- **animation**: Animation-related changes
+- **deploy**: Deployment configuration (GitHub Pages, CI/CD)
+
+### Guidelines
+- Keep first line under 72 characters
+- Use imperative mood ("add" not "added")
+- Always include: `Co-Authored-By: Warp <agent@warp.dev>`
+- Scope is optional but recommended
+- Reference issues when applicable: `fix(sass): resolve mobile menu bug (#123)`

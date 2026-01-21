@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:ui": "vitest --ui",
+    "test:coverage": "vitest run --coverage",
     "sass": "sass sass/main.scss dist/css/main.css",
     "sass:watch": "sass --watch sass/main.scss dist/css/main.css",
     "notebooks": "jupyter nbconvert --to html --template lab --embed-images --output-dir dist/notebooks/ notebooks/*.ipynb"
@@ -14,6 +17,11 @@
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
-    "sass": "^1.97.2"
+    "@testing-library/dom": "^10.4.1",
+    "@vitest/ui": "^4.0.17",
+    "happy-dom": "^20.3.4",
+    "jsdom": "^27.4.0",
+    "sass": "^1.97.2",
+    "vitest": "^4.0.17"
   }
 }

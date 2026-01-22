@@ -10,47 +10,47 @@ describe('Portfolio HTML Content Tests', () => {
     document = new DOMParser().parseFromString(html, 'text/html');
   });
 
-  describe('AI Engineering Learning Project Card', () => {
+  describe('Company Brochure Generator Card', () => {
     let projectCard;
     
     beforeEach(() => {
       const aiSection = document.getElementById('ai');
       const projectCards = aiSection.querySelectorAll('.project-card');
-      // Third card in AI section is the AI Engineering Learning Project
+      // Third card in AI section is the Company Brochure Generator
       projectCard = projectCards[2];
     });
 
     it('renders correctly with proper title', () => {
       const title = projectCard.querySelector('.project-card__title');
       expect(title).toBeTruthy();
-      expect(title.textContent.trim()).toBe('AI Engineering Learning Project');
+      expect(title.textContent.trim()).toBe('Company Brochure Generator');
     });
 
     it('displays correct icon', () => {
       const icon = projectCard.querySelector('.project-card__icon');
       expect(icon).toBeTruthy();
-      expect(icon.textContent.trim()).toBe('🎓');
+      expect(icon.textContent.trim()).toBe('📄');
     });
 
     it('contains comprehensive description', () => {
       const description = projectCard.querySelector('.project-card__description');
       expect(description).toBeTruthy();
-      expect(description.textContent).toContain('Production-ready LLM engineering implementations');
-      expect(description.textContent).toContain('AI agents');
-      expect(description.textContent).toContain('company brochure generator');
+      expect(description.textContent).toContain('AI-powered tool');
+      expect(description.textContent).toContain('professional company brochures');
+      expect(description.textContent).toContain('analyzing website content');
+      expect(description.textContent).toContain('two-stage LLM pipeline');
       expect(description.textContent).toContain('intelligent link selection');
-      expect(description.textContent).toContain('prompt engineering patterns');
     });
 
     it('has correct GitHub link', () => {
       const link = projectCard.querySelector('.project-card__link');
       expect(link).toBeTruthy();
-      expect(link.getAttribute('href')).toBe('https://github.com/Bytes0211/ai_engineering');
+      expect(link.getAttribute('href')).toBe('https://github.com/Bytes0211/ai_engineering/tree/main/brochure');
       expect(link.textContent).toContain('View Details');
     });
   });
 
-  describe('Tech Stack Badges - AI Engineering Project', () => {
+  describe('Tech Stack Badges - Company Brochure Generator', () => {
     let projectCard;
     
     beforeEach(() => {
@@ -59,9 +59,9 @@ describe('Portfolio HTML Content Tests', () => {
       projectCard = projectCards[2];
     });
 
-    it('displays all 8 specified technologies', () => {
+    it('displays all 5 specified technologies', () => {
       const techBadges = projectCard.querySelectorAll('.project-card__tech-badge');
-      expect(techBadges.length).toBe(8);
+      expect(techBadges.length).toBe(5);
     });
 
     it('includes OpenAI API badge', () => {
@@ -70,22 +70,10 @@ describe('Portfolio HTML Content Tests', () => {
       expect(openAIBadge).toBeTruthy();
     });
 
-    it('includes Anthropic Claude badge', () => {
+    it('includes BeautifulSoup badge', () => {
       const badges = Array.from(projectCard.querySelectorAll('.project-card__tech-badge'));
-      const claudeBadge = badges.find(badge => badge.textContent.trim() === 'Anthropic Claude');
-      expect(claudeBadge).toBeTruthy();
-    });
-
-    it('includes Google Gemini badge', () => {
-      const badges = Array.from(projectCard.querySelectorAll('.project-card__tech-badge'));
-      const geminiBadge = badges.find(badge => badge.textContent.trim() === 'Google Gemini');
-      expect(geminiBadge).toBeTruthy();
-    });
-
-    it('includes Ollama badge', () => {
-      const badges = Array.from(projectCard.querySelectorAll('.project-card__tech-badge'));
-      const ollamaBadge = badges.find(badge => badge.textContent.trim() === 'Ollama');
-      expect(ollamaBadge).toBeTruthy();
+      const bsBadge = badges.find(badge => badge.textContent.trim() === 'BeautifulSoup');
+      expect(bsBadge).toBeTruthy();
     });
 
     it('includes Python badge', () => {
@@ -94,22 +82,16 @@ describe('Portfolio HTML Content Tests', () => {
       expect(pythonBadge).toBeTruthy();
     });
 
-    it('includes BeautifulSoup badge', () => {
-      const badges = Array.from(projectCard.querySelectorAll('.project-card__tech-badge'));
-      const bsBadge = badges.find(badge => badge.textContent.trim() === 'BeautifulSoup');
-      expect(bsBadge).toBeTruthy();
-    });
-
     it('includes uv badge', () => {
       const badges = Array.from(projectCard.querySelectorAll('.project-card__tech-badge'));
       const uvBadge = badges.find(badge => badge.textContent.trim() === 'uv');
       expect(uvBadge).toBeTruthy();
     });
 
-    it('includes pytest badge', () => {
+    it('includes unittest badge', () => {
       const badges = Array.from(projectCard.querySelectorAll('.project-card__tech-badge'));
-      const pytestBadge = badges.find(badge => badge.textContent.trim() === 'pytest');
-      expect(pytestBadge).toBeTruthy();
+      const unittestBadge = badges.find(badge => badge.textContent.trim() === 'unittest');
+      expect(unittestBadge).toBeTruthy();
     });
 
     it('displays tech badges in correct order', () => {
@@ -118,18 +100,15 @@ describe('Portfolio HTML Content Tests', () => {
       
       expect(badgeTexts).toEqual([
         'OpenAI API',
-        'Anthropic Claude',
-        'Google Gemini',
-        'Ollama',
         'BeautifulSoup',
+        'Python',
         'uv',
-        'pytest',
-        'Python'
+        'unittest'
       ]);
     });
   });
 
-  describe('Project Features List - AI Engineering Project', () => {
+  describe('Project Features List - Company Brochure Generator', () => {
     let projectCard;
     
     beforeEach(() => {
@@ -143,42 +122,43 @@ describe('Portfolio HTML Content Tests', () => {
       expect(features.length).toBe(4);
     });
 
-    it('lists AI web scraper/summarizer feature', () => {
+    it('lists smart link selection feature', () => {
       const features = Array.from(projectCard.querySelectorAll('.project-card__features li'));
-      const scraperFeature = features.find(li => 
-        li.textContent.includes('AI web scraper/summarizer') &&
-        li.textContent.includes('customizable roles') &&
-        li.textContent.includes('multi-language support')
+      const linkFeature = features.find(li => 
+        li.textContent.includes('Smart link selection') &&
+        li.textContent.includes('GPT-5-nano') &&
+        li.textContent.includes('relevant company pages')
       );
-      expect(scraperFeature).toBeTruthy();
+      expect(linkFeature).toBeTruthy();
     });
 
-    it('lists company brochure generator feature', () => {
+    it('lists two-stage LLM workflow feature', () => {
       const features = Array.from(projectCard.querySelectorAll('.project-card__features li'));
-      const brochureFeature = features.find(li => 
-        li.textContent.includes('Company brochure generator') &&
-        li.textContent.includes('two-stage LLM pipeline') &&
-        li.textContent.includes('JSON structured outputs')
+      const workflowFeature = features.find(li => 
+        li.textContent.includes('Two-stage LLM workflow') &&
+        li.textContent.includes('link discovery') &&
+        li.textContent.includes('content aggregation') &&
+        li.textContent.includes('brochure generation')
       );
-      expect(brochureFeature).toBeTruthy();
+      expect(workflowFeature).toBeTruthy();
     });
 
-    it('lists dual-model strategy feature', () => {
+    it('lists JSON structured outputs feature', () => {
       const features = Array.from(projectCard.querySelectorAll('.project-card__features li'));
-      const modelFeature = features.find(li => 
-        li.textContent.includes('Dual-model strategy') &&
-        li.textContent.includes('gpt-5-nano') &&
-        li.textContent.includes('gpt-4.1-mini')
+      const jsonFeature = features.find(li => 
+        li.textContent.includes('JSON structured outputs') &&
+        li.textContent.includes('reliable parsing') &&
+        li.textContent.includes('streaming support')
       );
-      expect(modelFeature).toBeTruthy();
+      expect(jsonFeature).toBeTruthy();
     });
 
     it('lists CLI and testing features', () => {
       const features = Array.from(projectCard.querySelectorAll('.project-card__features li'));
       const cliFeature = features.find(li => 
-        li.textContent.includes('CLI interfaces') &&
-        li.textContent.includes('streaming support') &&
-        li.textContent.includes('20+ tests')
+        li.textContent.includes('CLI interface') &&
+        li.textContent.includes('custom models') &&
+        li.textContent.includes('20+ unit tests')
       );
       expect(cliFeature).toBeTruthy();
     });
@@ -188,10 +168,10 @@ describe('Portfolio HTML Content Tests', () => {
       const featureTexts = features.map(li => li.textContent.trim());
       
       expect(featureTexts).toEqual([
-        'AI web scraper/summarizer with customizable roles & multi-language support',
-        'Company brochure generator with two-stage LLM pipeline & JSON structured outputs',
-        'Dual-model strategy (gpt-5-nano for link selection, gpt-4.1-mini for generation)',
-        'CLI interfaces, streaming support, comprehensive unit tests (20+ tests)'
+        'Smart link selection with GPT-5-nano for relevant company pages',
+        'Two-stage LLM workflow: link discovery → content aggregation → brochure generation',
+        'JSON structured outputs for reliable parsing & streaming support',
+        'CLI interface, custom models, comprehensive testing (20+ unit tests)'
       ]);
     });
   });

@@ -35,11 +35,11 @@ describe('Portfolio HTML Content Tests', () => {
     it('contains comprehensive description', () => {
       const description = projectCard.querySelector('.project-card__description');
       expect(description).toBeTruthy();
-      expect(description.textContent).toContain('Comprehensive LLM engineering project');
-      expect(description.textContent).toContain('production-ready Python implementations');
+      expect(description.textContent).toContain('Production-ready LLM engineering implementations');
       expect(description.textContent).toContain('AI agents');
-      expect(description.textContent).toContain('multi-provider API integration');
-      expect(description.textContent).toContain('conversational AI systems');
+      expect(description.textContent).toContain('company brochure generator');
+      expect(description.textContent).toContain('intelligent link selection');
+      expect(description.textContent).toContain('prompt engineering patterns');
     });
 
     it('has correct GitHub link', () => {
@@ -59,9 +59,9 @@ describe('Portfolio HTML Content Tests', () => {
       projectCard = projectCards[2];
     });
 
-    it('displays all 5 specified technologies', () => {
+    it('displays all 8 specified technologies', () => {
       const techBadges = projectCard.querySelectorAll('.project-card__tech-badge');
-      expect(techBadges.length).toBe(5);
+      expect(techBadges.length).toBe(8);
     });
 
     it('includes OpenAI API badge', () => {
@@ -94,6 +94,24 @@ describe('Portfolio HTML Content Tests', () => {
       expect(pythonBadge).toBeTruthy();
     });
 
+    it('includes BeautifulSoup badge', () => {
+      const badges = Array.from(projectCard.querySelectorAll('.project-card__tech-badge'));
+      const bsBadge = badges.find(badge => badge.textContent.trim() === 'BeautifulSoup');
+      expect(bsBadge).toBeTruthy();
+    });
+
+    it('includes uv badge', () => {
+      const badges = Array.from(projectCard.querySelectorAll('.project-card__tech-badge'));
+      const uvBadge = badges.find(badge => badge.textContent.trim() === 'uv');
+      expect(uvBadge).toBeTruthy();
+    });
+
+    it('includes pytest badge', () => {
+      const badges = Array.from(projectCard.querySelectorAll('.project-card__tech-badge'));
+      const pytestBadge = badges.find(badge => badge.textContent.trim() === 'pytest');
+      expect(pytestBadge).toBeTruthy();
+    });
+
     it('displays tech badges in correct order', () => {
       const badges = Array.from(projectCard.querySelectorAll('.project-card__tech-badge'));
       const badgeTexts = badges.map(badge => badge.textContent.trim());
@@ -103,6 +121,9 @@ describe('Portfolio HTML Content Tests', () => {
         'Anthropic Claude',
         'Google Gemini',
         'Ollama',
+        'BeautifulSoup',
+        'uv',
+        'pytest',
         'Python'
       ]);
     });
@@ -122,40 +143,44 @@ describe('Portfolio HTML Content Tests', () => {
       expect(features.length).toBe(4);
     });
 
-    it('lists AI web scraper/summarizer agent feature', () => {
+    it('lists AI web scraper/summarizer feature', () => {
       const features = Array.from(projectCard.querySelectorAll('.project-card__features li'));
       const scraperFeature = features.find(li => 
-        li.textContent.includes('AI web scraper/summarizer agent') &&
-        li.textContent.includes('customizable roles')
+        li.textContent.includes('AI web scraper/summarizer') &&
+        li.textContent.includes('customizable roles') &&
+        li.textContent.includes('multi-language support')
       );
       expect(scraperFeature).toBeTruthy();
     });
 
-    it('lists multi-provider LLM integration feature', () => {
+    it('lists company brochure generator feature', () => {
       const features = Array.from(projectCard.querySelectorAll('.project-card__features li'));
-      const llmFeature = features.find(li => 
-        li.textContent.includes('Multi-provider LLM integration') &&
-        li.textContent.includes('6+ providers')
+      const brochureFeature = features.find(li => 
+        li.textContent.includes('Company brochure generator') &&
+        li.textContent.includes('two-stage LLM pipeline') &&
+        li.textContent.includes('JSON structured outputs')
       );
-      expect(llmFeature).toBeTruthy();
+      expect(brochureFeature).toBeTruthy();
     });
 
-    it('lists prompt engineering feature', () => {
+    it('lists dual-model strategy feature', () => {
       const features = Array.from(projectCard.querySelectorAll('.project-card__features li'));
-      const promptFeature = features.find(li => 
-        li.textContent.includes('Prompt engineering') &&
-        li.textContent.includes('optimization techniques')
+      const modelFeature = features.find(li => 
+        li.textContent.includes('Dual-model strategy') &&
+        li.textContent.includes('gpt-5-nano') &&
+        li.textContent.includes('gpt-4.1-mini')
       );
-      expect(promptFeature).toBeTruthy();
+      expect(modelFeature).toBeTruthy();
     });
 
-    it('lists production-ready code feature', () => {
+    it('lists CLI and testing features', () => {
       const features = Array.from(projectCard.querySelectorAll('.project-card__features li'));
-      const productionFeature = features.find(li => 
-        li.textContent.includes('Production-ready code') &&
-        li.textContent.includes('comprehensive testing')
+      const cliFeature = features.find(li => 
+        li.textContent.includes('CLI interfaces') &&
+        li.textContent.includes('streaming support') &&
+        li.textContent.includes('20+ tests')
       );
-      expect(productionFeature).toBeTruthy();
+      expect(cliFeature).toBeTruthy();
     });
 
     it('features are listed in correct order', () => {
@@ -163,10 +188,10 @@ describe('Portfolio HTML Content Tests', () => {
       const featureTexts = features.map(li => li.textContent.trim());
       
       expect(featureTexts).toEqual([
-        'AI web scraper/summarizer agent with customizable roles',
-        'Multi-provider LLM integration (6+ providers)',
-        'Prompt engineering & optimization techniques',
-        'Production-ready code with comprehensive testing'
+        'AI web scraper/summarizer with customizable roles & multi-language support',
+        'Company brochure generator with two-stage LLM pipeline & JSON structured outputs',
+        'Dual-model strategy (gpt-5-nano for link selection, gpt-4.1-mini for generation)',
+        'CLI interfaces, streaming support, comprehensive unit tests (20+ tests)'
       ]);
     });
   });

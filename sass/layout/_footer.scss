@@ -35,6 +35,32 @@
     }
   }
   
+  // Alternative class for SVG-based social icons
+  .md-social__link {
+    @include flex-center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--bg-color);
+    transition: all $transition-fast;
+    
+    svg {
+      width: 20px;
+      height: 20px;
+      fill: var(--text-color);
+      transition: fill $transition-fast;
+    }
+    
+    &:hover {
+      background: $primary-color;
+      transform: translateY(-4px);
+      
+      svg {
+        fill: white;
+      }
+    }
+  }
+  
   &__copyright {
     text-align: center;
     font-size: $font-size-sm;

@@ -338,4 +338,34 @@ describe('Portfolio HTML Content Tests', () => {
       expect(heroTitle.textContent).toContain('AI Integration Specialist');
     });
   });
+
+  describe('GoatCounter Analytics Integration', () => {
+    it('includes GoatCounter script in the HTML', () => {
+      const scripts = document.querySelectorAll('script');
+      const goatCounterScript = Array.from(scripts).find(script => 
+        script.getAttribute('src') === '//gc.zgo.at/count.js'
+      );
+      expect(goatCounterScript).toBeTruthy();
+    });
+
+    it('GoatCounter script has correct data-goatcounter attribute', () => {
+      const scripts = document.querySelectorAll('script');
+      const goatCounterScript = Array.from(scripts).find(script => 
+        script.getAttribute('src') === '//gc.zgo.at/count.js'
+      );
+      
+      expect(goatCounterScript).toBeTruthy();
+      expect(goatCounterScript.getAttribute('data-goatcounter')).toBe('https://stevencotton.goatcounter.com/count');
+    });
+
+    it('GoatCounter script loads asynchronously', () => {
+      const scripts = document.querySelectorAll('script');
+      const goatCounterScript = Array.from(scripts).find(script => 
+        script.getAttribute('src') === '//gc.zgo.at/count.js'
+      );
+      
+      expect(goatCounterScript).toBeTruthy();
+      expect(goatCounterScript.hasAttribute('async')).toBe(true);
+    });
+  });
 });

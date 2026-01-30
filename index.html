@@ -30,7 +30,6 @@
                     <li><a href="#home" class="header__nav-link active">Home</a></li>
                     <li><a href="#data-engineering" class="header__nav-link">Data Engineering</a></li>
                     <li><a href="#ai" class="header__nav-link">AI</a></li>
-                    <li><a href="#cloud-computing" class="header__nav-link">Cloud Computing</a></li>
                     <li><a href="#about" class="header__nav-link">About</a></li>
                 </ul>
             </nav>
@@ -160,6 +159,30 @@
             
             <div class="project-grid">
                 <article class="project-card">
+                    <div class="project-card__icon"><img src="assets/stratumai_icon.png" alt="StratumAI Icon"></div>
+                    <h3 class="project-card__title">StratumAI Multi-Provider LLM Platform</h3>
+                    <p class="project-card__description">
+                        Production-ready Python module providing unified abstraction across 8 LLM providers (OpenAI, Anthropic, Google, DeepSeek, Groq, Grok, OpenRouter, Ollama) with intelligent routing, cost tracking, and zero vendor lock-in.
+                    </p>
+                    <div class="project-card__tech-stack">
+                        <span class="project-card__tech-badge">Python</span>
+                        <span class="project-card__tech-badge">OpenAI SDK</span>
+                        <span class="project-card__tech-badge">Anthropic SDK</span>
+                        <span class="project-card__tech-badge">Google AI</span>
+                        <span class="project-card__tech-badge">pytest</span>
+                    </div>
+                    <ul class="project-card__features">
+                        <li>8 provider implementations with strategy pattern</li>
+                        <li>Intelligent routing (cost-optimized, quality-focused, hybrid)</li>
+                        <li>Cost tracking accurate to $0.0001 with budget enforcement</li>
+                        <li>Streaming support, retry logic, caching, comprehensive testing</li>
+                    </ul>
+                    <a href="https://github.com/Bytes0211/stratumai" class="project-card__link">
+                        View Details <i class="fas fa-arrow-right"></i>
+                    </a>
+                </article>
+
+                <article class="project-card">
                     <div class="project-card__icon"><img src="assets/dealfinder_icon.png" alt="DealFinder Icon"></div>
                     <h3 class="project-card__title">Deal Finder AI Agent System</h3>
                     <p class="project-card__description">
@@ -235,131 +258,6 @@
         </div>
     </section>
 
-    <!-- Cloud Computing Section -->
-    <section class="section" id="cloud-computing" style="background: var(--bg-secondary);">
-        <div class="section__container">
-            <div class="section__header">
-                <h2 class="section__title">☁️ Cloud Computing</h2>
-                <p class="section__subtitle">AWS and Terraform projects with practical implementations and automation</p>
-            </div>
-            
-            <div class="project-grid">
-                <article class="project-card">
-                    <div class="project-card__icon">📦</div>
-                    <h3 class="project-card__title">DynamoDB Inventory System</h3>
-                    <p class="project-card__description">
-                        Advanced NoSQL project demonstrating single table design, Global Secondary Indexes, transactions, and comprehensive testing with 20+ unit tests.
-                    </p>
-                    <div class="project-card__tech-stack">
-                        <span class="project-card__tech-badge">DynamoDB</span>
-                        <span class="project-card__tech-badge">Python</span>
-                        <span class="project-card__tech-badge">Boto3</span>
-                        <span class="project-card__tech-badge">pytest</span>
-                    </div>
-                    <ul class="project-card__features">
-                        <li>Single table design pattern</li>
-                        <li>GSI for complex queries</li>
-                        <li>Transaction support</li>
-                        <li>20+ comprehensive unit tests</li>
-                    </ul>
-                    <a href="#" class="project-card__link">
-                        View Details <i class="fas fa-arrow-right"></i>
-                    </a>
-                </article>
-
-                <article class="project-card">
-                    <div class="project-card__icon">🔧</div>
-                    <h3 class="project-card__title">AWS Management Library</h3>
-                    <p class="project-card__description">
-                        Comprehensive Python library for managing AWS services (Lambda, S3, EC2, DynamoDB) with local development support and comprehensive testing.
-                    </p>
-                    <div class="project-card__tech-stack">
-                        <span class="project-card__tech-badge">Python</span>
-                        <span class="project-card__tech-badge">Boto3</span>
-                        <span class="project-card__tech-badge">pytest</span>
-                        <span class="project-card__tech-badge">moto</span>
-                    </div>
-                    <ul class="project-card__features">
-                        <li>Multi-service AWS operations</li>
-                        <li>Local DynamoDB support</li>
-                        <li>Table migration utilities</li>
-                        <li>16+ unit tests</li>
-                    </ul>
-                    <a href="#" class="project-card__link">
-                        View Details <i class="fas fa-arrow-right"></i>
-                    </a>
-                </article>
-
-                <article class="project-card">
-                    <div class="project-card__icon">📄</div>
-                    <h3 class="project-card__title">AWS File Validator</h3>
-                    <p class="project-card__description">
-                        Serverless Java application that validates file formats (CSV/JSON) using AWS Lambda with extensible architecture for multiple validation strategies.
-                    </p>
-                    <div class="project-card__tech-stack">
-                        <span class="project-card__tech-badge">Java 11</span>
-                        <span class="project-card__tech-badge">AWS Lambda</span>
-                        <span class="project-card__tech-badge">S3</span>
-                        <span class="project-card__tech-badge">Maven</span>
-                    </div>
-                    <ul class="project-card__features">
-                        <li>CSV/JSON validation</li>
-                        <li>Extensible architecture</li>
-                        <li>S3 integration</li>
-                        <li>Local testing support</li>
-                    </ul>
-                    <a href="#" class="project-card__link">
-                        View Details <i class="fas fa-arrow-right"></i>
-                    </a>
-                </article>
-
-                <article class="project-card">
-                    <div class="project-card__icon">🏭</div>
-                    <h3 class="project-card__title">Terraform AWS Product App</h3>
-                    <p class="project-card__description">
-                        Complete Infrastructure as Code using Terraform to deploy a full-stack product management application with VPC networking and automated deployment.
-                    </p>
-                    <div class="project-card__tech-stack">
-                        <span class="project-card__tech-badge">Terraform</span>
-                        <span class="project-card__tech-badge">AWS</span>
-                        <span class="project-card__tech-badge">Spring Boot</span>
-                        <span class="project-card__tech-badge">DynamoDB</span>
-                    </div>
-                    <ul class="project-card__features">
-                        <li>VPC networking architecture</li>
-                        <li>Full-stack IaC deployment</li>
-                        <li>EC2 and Lambda integration</li>
-                        <li>Automated infrastructure provisioning</li>
-                    </ul>
-                    <a href="#" class="project-card__link">
-                        View Details <i class="fas fa-arrow-right"></i>
-                    </a>
-                </article>
-
-                <article class="project-card">
-                    <div class="project-card__icon">⚙️</div>
-                    <h3 class="project-card__title">Scotton AWS Utils</h3>
-                    <p class="project-card__description">
-                        Comprehensive Python package for AWS service operations with unified interface for S3, Lambda, EC2, IAM, and DynamoDB with advanced transaction support.
-                    </p>
-                    <div class="project-card__tech-stack">
-                        <span class="project-card__tech-badge">Python</span>
-                        <span class="project-card__tech-badge">Boto3</span>
-                        <span class="project-card__tech-badge">pip</span>
-                    </div>
-                    <ul class="project-card__features">
-                        <li>Multi-service support</li>
-                        <li>Advanced DynamoDB operations</li>
-                        <li>Transaction support</li>
-                        <li>Local testing capabilities</li>
-                    </ul>
-                    <a href="#" class="project-card__link">
-                        View Details <i class="fas fa-arrow-right"></i>
-                    </a>
-                </article>
-            </div>
-        </div>
-    </section>
 
     <!-- About Section -->
     <section class="section about" id="about">

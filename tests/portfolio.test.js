@@ -16,8 +16,8 @@ describe('Portfolio HTML Content Tests', () => {
     beforeEach(() => {
       const aiSection = document.getElementById('ai');
       const projectCards = aiSection.querySelectorAll('.project-card');
-      // Second card in AI section is the Company Brochure Generator (0-indexed)
-      projectCard = projectCards[1];
+      // Third card in AI section is the Company Brochure Generator (0-indexed)
+      projectCard = projectCards[2];
     });
 
     it('renders correctly with proper title', () => {
@@ -26,10 +26,10 @@ describe('Portfolio HTML Content Tests', () => {
       expect(title.textContent.trim()).toBe('Company Brochure Generator');
     });
 
-    it('displays correct icon', () => {
-      const icon = projectCard.querySelector('.project-card__icon');
+    it('displays correct icon image', () => {
+      const icon = projectCard.querySelector('.project-card__icon img');
       expect(icon).toBeTruthy();
-      expect(icon.textContent.trim()).toBe('📄');
+      expect(icon.getAttribute('src')).toBe('assets/brochure_icon.png');
     });
 
     it('contains comprehensive description', () => {
@@ -56,7 +56,7 @@ describe('Portfolio HTML Content Tests', () => {
     beforeEach(() => {
       const aiSection = document.getElementById('ai');
       const projectCards = aiSection.querySelectorAll('.project-card');
-      projectCard = projectCards[1];
+      projectCard = projectCards[2];
     });
 
     it('displays all 5 specified technologies', () => {
@@ -114,7 +114,7 @@ describe('Portfolio HTML Content Tests', () => {
     beforeEach(() => {
       const aiSection = document.getElementById('ai');
       const projectCards = aiSection.querySelectorAll('.project-card');
-      projectCard = projectCards[1];
+      projectCard = projectCards[2];
     });
 
     it('displays all 4 features', () => {
@@ -317,10 +317,10 @@ describe('Portfolio HTML Content Tests', () => {
       expect(title.textContent.trim()).toBe('Business Prompt Generator');
     });
 
-    it('displays correct icon', () => {
-      const icon = projectCard.querySelector('.project-card__icon');
+    it('displays correct icon image', () => {
+      const icon = projectCard.querySelector('.project-card__icon img');
       expect(icon).toBeTruthy();
-      expect(icon.textContent.trim()).toBe('✍️');
+      expect(icon.getAttribute('src')).toBe('assets/prompt_generator_icon.png');
     });
 
     it('contains updated description with OpenRouter integration', () => {
@@ -596,6 +596,239 @@ describe('Portfolio HTML Content Tests', () => {
       
       expect(goatCounterScript).toBeTruthy();
       expect(goatCounterScript.hasAttribute('async')).toBe(true);
+    });
+  });
+
+  describe('Navigation - Cloud Computing Link Removal', () => {
+    it('Cloud Computing navigation link is not present in header', () => {
+      const header = document.querySelector('.header');
+      const navLinks = header.querySelectorAll('.header__nav-link');
+      const navLinkTexts = Array.from(navLinks).map(link => link.textContent.trim());
+      
+      expect(navLinkTexts).not.toContain('Cloud Computing');
+    });
+
+    it('header contains only 4 navigation links', () => {
+      const header = document.querySelector('.header');
+      const navLinks = header.querySelectorAll('.header__nav-link');
+      
+      expect(navLinks.length).toBe(4);
+    });
+
+    it('navigation links are Home, Data Engineering, AI, and About', () => {
+      const header = document.querySelector('.header');
+      const navLinks = header.querySelectorAll('.header__nav-link');
+      const navLinkTexts = Array.from(navLinks).map(link => link.textContent.trim());
+      
+      expect(navLinkTexts).toEqual(['Home', 'Data Engineering', 'AI', 'About']);
+    });
+  });
+
+  describe('Sections - Cloud Computing Section Removal', () => {
+    it('Cloud Computing section is not present on the page', () => {
+      const cloudSection = document.getElementById('cloud-computing');
+      expect(cloudSection).toBeNull();
+    });
+
+    it('page contains only expected sections: home, data-engineering, ai, about', () => {
+      const sections = document.querySelectorAll('section[id]');
+      const sectionIds = Array.from(sections).map(section => section.id);
+      
+      expect(sectionIds).toEqual(['home', 'data-engineering', 'ai', 'about']);
+    });
+  });
+
+  describe('StratifyAI Multi-Provider LLM Platform Card', () => {
+    let projectCard;
+    
+    beforeEach(() => {
+      const aiSection = document.getElementById('ai');
+      const projectCards = aiSection.querySelectorAll('.project-card');
+      // First card in AI section is StratifyAI
+      projectCard = projectCards[0];
+    });
+
+    it('is displayed in the AI section', () => {
+      expect(projectCard).toBeTruthy();
+    });
+
+    it('is the first card in the AI section', () => {
+      const aiSection = document.getElementById('ai');
+      const projectCards = aiSection.querySelectorAll('.project-card');
+      const firstCard = projectCards[0];
+      const title = firstCard.querySelector('.project-card__title');
+      
+      expect(title.textContent.trim()).toBe('StratifyAI Multi-Provider LLM Platform');
+    });
+
+    it('has correct title', () => {
+      const title = projectCard.querySelector('.project-card__title');
+      expect(title).toBeTruthy();
+      expect(title.textContent.trim()).toBe('StratifyAI Multi-Provider LLM Platform');
+    });
+
+    it('contains correct image with proper path', () => {
+      const iconImg = projectCard.querySelector('.project-card__icon img');
+      expect(iconImg).toBeTruthy();
+      expect(iconImg.getAttribute('src')).toBe('assets/stratifyai_icon.png');
+    });
+
+    it('image has correct alt text', () => {
+      const iconImg = projectCard.querySelector('.project-card__icon img');
+      expect(iconImg.getAttribute('alt')).toBe('StratifyAI Icon');
+    });
+
+    it('contains comprehensive description', () => {
+      const description = projectCard.querySelector('.project-card__description');
+      expect(description).toBeTruthy();
+      expect(description.textContent).toContain('Production-ready Python module');
+      expect(description.textContent).toContain('unified abstraction');
+      expect(description.textContent).toContain('9 LLM providers');
+      expect(description.textContent).toContain('OpenAI');
+      expect(description.textContent).toContain('Anthropic');
+      expect(description.textContent).toContain('Google');
+      expect(description.textContent).toContain('DeepSeek');
+      expect(description.textContent).toContain('Groq');
+      expect(description.textContent).toContain('Grok');
+      expect(description.textContent).toContain('OpenRouter');
+      expect(description.textContent).toContain('Ollama');
+      expect(description.textContent).toContain('AWS Bedrock');
+      expect(description.textContent).toContain('intelligent routing');
+      expect(description.textContent).toContain('cost tracking');
+      expect(description.textContent).toContain('zero vendor lock-in');
+    });
+
+    it('has correct GitHub link', () => {
+      const link = projectCard.querySelector('.project-card__link');
+      expect(link).toBeTruthy();
+      expect(link.getAttribute('href')).toBe('https://github.com/Bytes0211/stratifyai');
+      expect(link.textContent).toContain('View Details');
+    });
+  });
+
+  describe('Tech Stack Badges - StratifyAI', () => {
+    let projectCard;
+    
+    beforeEach(() => {
+      const aiSection = document.getElementById('ai');
+      const projectCards = aiSection.querySelectorAll('.project-card');
+      projectCard = projectCards[0];
+    });
+
+    it('displays all 5 specified technologies', () => {
+      const techBadges = projectCard.querySelectorAll('.project-card__tech-badge');
+      expect(techBadges.length).toBe(5);
+    });
+
+    it('includes Python badge', () => {
+      const badges = Array.from(projectCard.querySelectorAll('.project-card__tech-badge'));
+      const pythonBadge = badges.find(badge => badge.textContent.trim() === 'Python');
+      expect(pythonBadge).toBeTruthy();
+    });
+
+    it('includes OpenAI SDK badge', () => {
+      const badges = Array.from(projectCard.querySelectorAll('.project-card__tech-badge'));
+      const openAIBadge = badges.find(badge => badge.textContent.trim() === 'OpenAI SDK');
+      expect(openAIBadge).toBeTruthy();
+    });
+
+    it('includes Anthropic SDK badge', () => {
+      const badges = Array.from(projectCard.querySelectorAll('.project-card__tech-badge'));
+      const anthropicBadge = badges.find(badge => badge.textContent.trim() === 'Anthropic SDK');
+      expect(anthropicBadge).toBeTruthy();
+    });
+
+    it('includes Google AI badge', () => {
+      const badges = Array.from(projectCard.querySelectorAll('.project-card__tech-badge'));
+      const googleBadge = badges.find(badge => badge.textContent.trim() === 'Google AI');
+      expect(googleBadge).toBeTruthy();
+    });
+
+    it('includes pytest badge', () => {
+      const badges = Array.from(projectCard.querySelectorAll('.project-card__tech-badge'));
+      const pytestBadge = badges.find(badge => badge.textContent.trim() === 'pytest');
+      expect(pytestBadge).toBeTruthy();
+    });
+
+    it('displays tech badges in correct order', () => {
+      const badges = Array.from(projectCard.querySelectorAll('.project-card__tech-badge'));
+      const badgeTexts = badges.map(badge => badge.textContent.trim());
+      
+      expect(badgeTexts).toEqual([
+        'Python',
+        'OpenAI SDK',
+        'Anthropic SDK',
+        'Google AI',
+        'pytest'
+      ]);
+    });
+  });
+
+  describe('Project Features List - StratifyAI', () => {
+    let projectCard;
+    
+    beforeEach(() => {
+      const aiSection = document.getElementById('ai');
+      const projectCards = aiSection.querySelectorAll('.project-card');
+      projectCard = projectCards[0];
+    });
+
+    it('displays all 4 features', () => {
+      const features = projectCard.querySelectorAll('.project-card__features li');
+      expect(features.length).toBe(4);
+    });
+
+    it('lists 9 provider implementations feature', () => {
+      const features = Array.from(projectCard.querySelectorAll('.project-card__features li'));
+      const providerFeature = features.find(li => 
+        li.textContent.includes('9 provider implementations') &&
+        li.textContent.includes('strategy pattern')
+      );
+      expect(providerFeature).toBeTruthy();
+    });
+
+    it('lists intelligent routing feature', () => {
+      const features = Array.from(projectCard.querySelectorAll('.project-card__features li'));
+      const routingFeature = features.find(li => 
+        li.textContent.includes('Intelligent routing') &&
+        li.textContent.includes('cost-optimized') &&
+        li.textContent.includes('quality-focused') &&
+        li.textContent.includes('hybrid')
+      );
+      expect(routingFeature).toBeTruthy();
+    });
+
+    it('lists cost tracking feature', () => {
+      const features = Array.from(projectCard.querySelectorAll('.project-card__features li'));
+      const costFeature = features.find(li => 
+        li.textContent.includes('Cost tracking') &&
+        li.textContent.includes('$0.0001') &&
+        li.textContent.includes('budget enforcement')
+      );
+      expect(costFeature).toBeTruthy();
+    });
+
+    it('lists streaming and additional features', () => {
+      const features = Array.from(projectCard.querySelectorAll('.project-card__features li'));
+      const streamingFeature = features.find(li => 
+        li.textContent.includes('Streaming support') &&
+        li.textContent.includes('retry logic') &&
+        li.textContent.includes('caching') &&
+        li.textContent.includes('comprehensive testing')
+      );
+      expect(streamingFeature).toBeTruthy();
+    });
+
+    it('features are listed in correct order', () => {
+      const features = Array.from(projectCard.querySelectorAll('.project-card__features li'));
+      const featureTexts = features.map(li => li.textContent.trim());
+      
+      expect(featureTexts).toEqual([
+        '9 provider implementations with strategy pattern',
+        'Intelligent routing (cost-optimized, quality-focused, hybrid)',
+        'Cost tracking accurate to $0.0001 with budget enforcement',
+        'Streaming support, retry logic, caching, comprehensive testing'
+      ]);
     });
   });
 });

@@ -159,25 +159,26 @@
             
             <div class="project-grid">
                 <article class="project-card">
-                    <div class="project-card__icon"><img src="assets/stratifyai_icon.png" alt="StratifyAI Icon"></div>
-                    <h3 class="project-card__title">StratifyAI Multi-Provider LLM Platform</h3>
+                    <div class="project-card__icon"><img src="assets/semantic_search_dark_logo.png" alt="Semantic Search Icon"></div>
+                    <h3 class="project-card__title">Semantic Search for Internal Databases</h3>
                     <p class="project-card__description">
-                        Production-ready Python module providing unified abstraction across 9 LLM providers (OpenAI, Anthropic, Google, DeepSeek, Groq, Grok, OpenRouter, Ollama, AWS Bedrock) with intelligent routing, cost tracking, and zero vendor lock-in.
+                        Enterprise semantic search system using LLM-powered embeddings and vector search to enable natural-language queries across structured and semi-structured data sources with full ABAC security and AWS deployment.
                     </p>
                     <div class="project-card__tech-stack">
-                        <span class="project-card__tech-badge">Python</span>
-                        <span class="project-card__tech-badge">OpenAI SDK</span>
-                        <span class="project-card__tech-badge">Anthropic SDK</span>
-                        <span class="project-card__tech-badge">Google AI</span>
-                        <span class="project-card__tech-badge">pytest</span>
+                        <span class="project-card__tech-badge">FastAPI</span>
+                        <span class="project-card__tech-badge">React</span>
+                        <span class="project-card__tech-badge">AWS Bedrock</span>
+                        <span class="project-card__tech-badge">FAISS</span>
+                        <span class="project-card__tech-badge">Terraform</span>
+                        <span class="project-card__tech-badge">Docker</span>
                     </div>
                     <ul class="project-card__features">
-                        <li>9 provider implementations with strategy pattern</li>
-                        <li>Intelligent routing (cost-optimized, quality-focused, hybrid)</li>
-                        <li>Cost tracking accurate to $0.0001 with budget enforcement</li>
-                        <li>Streaming support, retry logic, caching, comprehensive testing</li>
+                        <li>Pluggable embedding providers (Bedrock, Spot, SageMaker) & vector stores (FAISS, Qdrant, pgvector)</li>
+                        <li>4-phase ABAC security: role filtering, JWT auth, presigned S3 links, audit logging</li>
+                        <li>YAML-driven config with 6 data connectors (CSV, SQL, JSON, XML, API, MongoDB)</li>
+                        <li>React 18 + TypeScript UI, ECS/Fargate & Lambda deployment, 366 passing tests</li>
                     </ul>
-                    <a href="https://github.com/Bytes0211/stratifyai" class="project-card__link">
+                    <a href="https://github.com/Bytes0211/semantic_search" class="project-card__link">
                         View Details <i class="fas fa-arrow-right"></i>
                     </a>
                 </article>
@@ -203,6 +204,30 @@
                         <li>Vector DB for similarity search (OpenSearch k-NN)</li>
                     </ul>
                     <a href="https://github.com/Bytes0211/dealfinder" class="project-card__link">
+                        View Details <i class="fas fa-arrow-right"></i>
+                    </a>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-card__icon"><img src="assets/stratifyai_icon.png" alt="StratifyAI Icon"></div>
+                    <h3 class="project-card__title">StratifyAI Multi-Provider LLM Platform</h3>
+                    <p class="project-card__description">
+                        Production-ready Python module providing unified abstraction across 9 LLM providers (OpenAI, Anthropic, Google, DeepSeek, Groq, Grok, OpenRouter, Ollama, AWS Bedrock) with intelligent routing, cost tracking, and zero vendor lock-in.
+                    </p>
+                    <div class="project-card__tech-stack">
+                        <span class="project-card__tech-badge">Python</span>
+                        <span class="project-card__tech-badge">OpenAI SDK</span>
+                        <span class="project-card__tech-badge">Anthropic SDK</span>
+                        <span class="project-card__tech-badge">Google AI</span>
+                        <span class="project-card__tech-badge">pytest</span>
+                    </div>
+                    <ul class="project-card__features">
+                        <li>9 provider implementations with strategy pattern</li>
+                        <li>Intelligent routing (cost-optimized, quality-focused, hybrid)</li>
+                        <li>Cost tracking accurate to $0.0001 with budget enforcement</li>
+                        <li>Streaming support, retry logic, caching, comprehensive testing</li>
+                    </ul>
+                    <a href="https://github.com/Bytes0211/stratifyai" class="project-card__link">
                         View Details <i class="fas fa-arrow-right"></i>
                     </a>
                 </article>

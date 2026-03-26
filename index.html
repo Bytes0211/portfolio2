@@ -28,8 +28,8 @@
             <nav class="header__nav" id="nav">
                 <ul class="header__nav-list">
                     <li><a href="#home" class="header__nav-link active">Home</a></li>
-                    <li><a href="#data-engineering" class="header__nav-link">Data Engineering</a></li>
                     <li><a href="#ai" class="header__nav-link">AI</a></li>
+                    <li><a href="#data-engineering" class="header__nav-link">Data Engineering</a></li>
                     <li><a href="#about" class="header__nav-link">About</a></li>
                 </ul>
             </nav>
@@ -56,17 +56,104 @@
                 Home of passionate, thoughtful energy expressed through code
             </p>
             <div class="hero__cta">
-                <a href="#data-engineering" class="btn btn--primary">View Projects</a>
+                <a href="#ai" class="btn btn--primary">View Projects</a>
                 <a href="#about" class="btn btn--secondary">About Me</a>
             </div>
         </div>
-        <div class="hero__scroll" onclick="document.getElementById('data-engineering').scrollIntoView({behavior: 'smooth'})">
+        <div class="hero__scroll" onclick="document.getElementById('ai').scrollIntoView({behavior: 'smooth'})">
             <i class="fas fa-chevron-down"></i>
         </div>
     </section>
 
+    <!-- AI Section -->
+    <section class="section" id="ai">
+        <div class="section__container">
+            <div class="section__header">
+                <h2 class="section__title">🤖 AI Integration</h2>
+                <p class="section__subtitle">Intelligent analytics chatbots and AI-powered data insights</p>
+            </div>
+            
+            <div class="project-grid">
+                <article class="project-card">
+                    <div class="project-card__icon"><img src="assets/semantic_search_dark_logo.png" alt="Semantic Search Icon"></div>
+                    <h3 class="project-card__title">Semantic Search for Internal Databases</h3>
+                    <p class="project-card__description">
+                        Enterprise semantic search system using LLM-powered embeddings and vector search to enable natural-language queries across structured and semi-structured data sources with full ABAC security and AWS deployment.
+                    </p>
+                    <div class="project-card__tech-stack">
+                        <span class="project-card__tech-badge">FastAPI</span>
+                        <span class="project-card__tech-badge">React</span>
+                        <span class="project-card__tech-badge">AWS Bedrock</span>
+                        <span class="project-card__tech-badge">FAISS</span>
+                        <span class="project-card__tech-badge">Terraform</span>
+                        <span class="project-card__tech-badge">Docker</span>
+                    </div>
+                    <ul class="project-card__features">
+                        <li>Pluggable embedding providers (Bedrock, Spot, SageMaker) & vector stores (FAISS, Qdrant, pgvector)</li>
+                        <li>4-phase ABAC security: role filtering, JWT auth, presigned S3 links, audit logging</li>
+                        <li>YAML-driven config with 6 data connectors (CSV, SQL, JSON, XML, API, MongoDB)</li>
+                        <li>React 18 + TypeScript UI, ECS/Fargate & Lambda deployment, 366 passing tests</li>
+                    </ul>
+                    <a href="https://github.com/Bytes0211/semantic_search" class="project-card__link">
+                        View Details <i class="fas fa-arrow-right"></i>
+                    </a>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-card__icon"><img src="assets/dealfinder_dark_icon.png" alt="DealFinder Icon"></div>
+                    <h3 class="project-card__title">Deal Finder AI Agent System</h3>
+                    <p class="project-card__description">
+                        Multi-agent AI system for autonomous deal discovery using RSS feeds, ensemble ML price estimation, and real-time notifications on AWS cloud infrastructure.
+                    </p>
+                    <div class="project-card__tech-stack">
+                        <span class="project-card__tech-badge">AWS</span>
+                        <span class="project-card__tech-badge">Apache Kafka</span>
+                        <span class="project-card__tech-badge">Apache Spark</span>
+                        <span class="project-card__tech-badge">AWS Bedrock</span>
+                        <span class="project-card__tech-badge">OpenSearch</span>
+                        <span class="project-card__tech-badge">FastAPI</span>
+                    </div>
+                    <ul class="project-card__features">
+                        <li>Multi-agent orchestration with Step Functions</li>
+                        <li>Ensemble ML pricing (3 models + weighted averaging)</li>
+                        <li>Event-driven streaming with Kafka (AWS MSK)</li>
+                        <li>Vector DB for similarity search (OpenSearch k-NN)</li>
+                    </ul>
+                    <a href="https://github.com/Bytes0211/dealfinder" class="project-card__link">
+                        View Details <i class="fas fa-arrow-right"></i>
+                    </a>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-card__icon"><img src="assets/aiphawatch_dark_logo.png" alt="AIphaWatch Icon"></div>
+                    <h3 class="project-card__title">AIphaWatch — AI Equity Intelligence Platform</h3>
+                    <p class="project-card__description">
+                        Multi-tenant SaaS platform that ingests SEC EDGAR filings, financial data, and news to generate structured AI analyst briefs and power a conversational RAG chat interface — reducing company research from hours to minutes.
+                    </p>
+                    <div class="project-card__tech-stack">
+                        <span class="project-card__tech-badge">LangGraph</span>
+                        <span class="project-card__tech-badge">AWS Bedrock</span>
+                        <span class="project-card__tech-badge">FastAPI</span>
+                        <span class="project-card__tech-badge">React 18</span>
+                        <span class="project-card__tech-badge">PostgreSQL + pgvector</span>
+                        <span class="project-card__tech-badge">Terraform</span>
+                    </div>
+                    <ul class="project-card__features">
+                        <li>8-section AI analyst briefs via LangGraph + Claude 3.5 Sonnet</li>
+                        <li>Multi-turn RAG chat grounded in real source data with inline citations</li>
+                        <li>Automated ingestion of SEC EDGAR, financial snapshots & news via Celery</li>
+                        <li>Multi-tenant with PostgreSQL RLS, AWS Cognito auth, and SSE streaming</li>
+                    </ul>
+                    <a href="https://github.com/Bytes0211/aIphawatch" class="project-card__link">
+                        View Details <i class="fas fa-arrow-right"></i>
+                    </a>
+                </article>
+            </div>
+        </div>
+    </section>
+
     <!-- Data Engineering Section -->
-    <section class="section" id="data-engineering">
+    <section class="section" id="data-engineering" style="background: var(--bg-secondary);">
         <div class="section__container">
             <div class="section__header">
                 <h2 class="section__title">🔄 Data Engineering</h2>
@@ -149,140 +236,6 @@
         </div>
     </section>
 
-    <!-- AI Section -->
-    <section class="section" id="ai" style="background: var(--bg-secondary);">
-        <div class="section__container">
-            <div class="section__header">
-                <h2 class="section__title">🤖 AI Integration</h2>
-                <p class="section__subtitle">Intelligent analytics chatbots and AI-powered data insights</p>
-            </div>
-            
-            <div class="project-grid">
-                <article class="project-card">
-                    <div class="project-card__icon"><img src="assets/semantic_search_dark_logo.png" alt="Semantic Search Icon"></div>
-                    <h3 class="project-card__title">Semantic Search for Internal Databases</h3>
-                    <p class="project-card__description">
-                        Enterprise semantic search system using LLM-powered embeddings and vector search to enable natural-language queries across structured and semi-structured data sources with full ABAC security and AWS deployment.
-                    </p>
-                    <div class="project-card__tech-stack">
-                        <span class="project-card__tech-badge">FastAPI</span>
-                        <span class="project-card__tech-badge">React</span>
-                        <span class="project-card__tech-badge">AWS Bedrock</span>
-                        <span class="project-card__tech-badge">FAISS</span>
-                        <span class="project-card__tech-badge">Terraform</span>
-                        <span class="project-card__tech-badge">Docker</span>
-                    </div>
-                    <ul class="project-card__features">
-                        <li>Pluggable embedding providers (Bedrock, Spot, SageMaker) & vector stores (FAISS, Qdrant, pgvector)</li>
-                        <li>4-phase ABAC security: role filtering, JWT auth, presigned S3 links, audit logging</li>
-                        <li>YAML-driven config with 6 data connectors (CSV, SQL, JSON, XML, API, MongoDB)</li>
-                        <li>React 18 + TypeScript UI, ECS/Fargate & Lambda deployment, 366 passing tests</li>
-                    </ul>
-                    <a href="https://github.com/Bytes0211/semantic_search" class="project-card__link">
-                        View Details <i class="fas fa-arrow-right"></i>
-                    </a>
-                </article>
-
-                <article class="project-card">
-                    <div class="project-card__icon"><img src="assets/dealfinder_dark_icon.png" alt="DealFinder Icon"></div>
-                    <h3 class="project-card__title">Deal Finder AI Agent System</h3>
-                    <p class="project-card__description">
-                        Multi-agent AI system for autonomous deal discovery using RSS feeds, ensemble ML price estimation, and real-time notifications on AWS cloud infrastructure.
-                    </p>
-                    <div class="project-card__tech-stack">
-                        <span class="project-card__tech-badge">AWS</span>
-                        <span class="project-card__tech-badge">Apache Kafka</span>
-                        <span class="project-card__tech-badge">Apache Spark</span>
-                        <span class="project-card__tech-badge">AWS Bedrock</span>
-                        <span class="project-card__tech-badge">OpenSearch</span>
-                        <span class="project-card__tech-badge">FastAPI</span>
-                    </div>
-                    <ul class="project-card__features">
-                        <li>Multi-agent orchestration with Step Functions</li>
-                        <li>Ensemble ML pricing (3 models + weighted averaging)</li>
-                        <li>Event-driven streaming with Kafka (AWS MSK)</li>
-                        <li>Vector DB for similarity search (OpenSearch k-NN)</li>
-                    </ul>
-                    <a href="https://github.com/Bytes0211/dealfinder" class="project-card__link">
-                        View Details <i class="fas fa-arrow-right"></i>
-                    </a>
-                </article>
-
-                <article class="project-card">
-                    <div class="project-card__icon"><img src="assets/stratifyai_icon.png" alt="StratifyAI Icon"></div>
-                    <h3 class="project-card__title">StratifyAI Multi-Provider LLM Platform</h3>
-                    <p class="project-card__description">
-                        Production-ready Python module providing unified abstraction across 9 LLM providers (OpenAI, Anthropic, Google, DeepSeek, Groq, Grok, OpenRouter, Ollama, AWS Bedrock) with intelligent routing, cost tracking, and zero vendor lock-in.
-                    </p>
-                    <div class="project-card__tech-stack">
-                        <span class="project-card__tech-badge">Python</span>
-                        <span class="project-card__tech-badge">OpenAI SDK</span>
-                        <span class="project-card__tech-badge">Anthropic SDK</span>
-                        <span class="project-card__tech-badge">Google AI</span>
-                        <span class="project-card__tech-badge">pytest</span>
-                    </div>
-                    <ul class="project-card__features">
-                        <li>9 provider implementations with strategy pattern</li>
-                        <li>Intelligent routing (cost-optimized, quality-focused, hybrid)</li>
-                        <li>Cost tracking accurate to $0.0001 with budget enforcement</li>
-                        <li>Streaming support, retry logic, caching, comprehensive testing</li>
-                    </ul>
-                    <a href="https://github.com/Bytes0211/stratifyai" class="project-card__link">
-                        View Details <i class="fas fa-arrow-right"></i>
-                    </a>
-                </article>
-
-                <article class="project-card">
-                    <div class="project-card__icon"><img src="assets/brochure_icon.png" alt="Brochure Icon"></div>
-                    <h3 class="project-card__title">Company Brochure Generator</h3>
-                    <p class="project-card__description">
-                        AI-powered tool that generates professional company brochures by analyzing website content using a two-stage LLM pipeline for intelligent link selection and content generation.
-                    </p>
-                    <div class="project-card__tech-stack">
-                        <span class="project-card__tech-badge">OpenAI API</span>
-                        <span class="project-card__tech-badge">BeautifulSoup</span>
-                        <span class="project-card__tech-badge">Python</span>
-                        <span class="project-card__tech-badge">uv</span>
-                        <span class="project-card__tech-badge">unittest</span>
-                    </div>
-                    <ul class="project-card__features">
-                        <li>Smart link selection with GPT-5-nano for relevant company pages</li>
-                        <li>Two-stage LLM workflow: link discovery → content aggregation → brochure generation</li>
-                        <li>JSON structured outputs for reliable parsing & streaming support</li>
-                        <li>CLI interface, custom models, comprehensive testing (20+ unit tests)</li>
-                    </ul>
-                    <a href="https://github.com/Bytes0211/ai_engineering/tree/main/brochure" class="project-card__link">
-                        View Details <i class="fas fa-arrow-right"></i>
-                    </a>
-                </article>
-
-                <article class="project-card">
-                    <div class="project-card__icon"><img src="assets/prompt_generator_icon.png" alt="Prompt Generator Icon"></div>
-                    <h3 class="project-card__title">Business Prompt Generator</h3>
-                    <p class="project-card__description">
-                        Interactive CLI tool for generating structured LLM prompts across 10 business domains with direct OpenRouter API integration supporting GPT-4.1 Mini and Claude 3.5 Haiku.
-                    </p>
-                    <div class="project-card__tech-stack">
-                        <span class="project-card__tech-badge">OpenRouter API</span>
-                        <span class="project-card__tech-badge">Python</span>
-                        <span class="project-card__tech-badge">GPT-4.1</span>
-                        <span class="project-card__tech-badge">Claude 3.5</span>
-                        <span class="project-card__tech-badge">uv</span>
-                    </div>
-                    <ul class="project-card__features">
-                        <li>10 pre-configured templates (business, support, strategy, HR, marketing, etc.)</li>
-                        <li>Multi-model support via OpenRouter (GPT-4.1 Mini & Claude 3.5 Haiku)</li>
-                        <li>Three-role prompt architecture (system/developer/user) with markdown output</li>
-                        <li>Interactive CLI with multi-line input support & comprehensive testing</li>
-                    </ul>
-                    <a href="https://github.com/Bytes0211/ai_engineering/tree/main/prompt_generator" class="project-card__link">
-                        View Details <i class="fas fa-arrow-right"></i>
-                    </a>
-                </article>
-            </div>
-        </div>
-    </section>
-
 
     <!-- About Section -->
     <section class="section about" id="about">
@@ -318,12 +271,18 @@
                     </div>
 
                     <div class="about__skill-group">
-                        <h4>Cloud & Infrastructure</h4>
+                        <h4>AI & Analytics</h4>
                         <ul>
-                            <li>AWS (DMS, Glue, Athena, Lambda, S3)</li>
-                            <li>Terraform (95% automation)</li>
-                            <li>Docker & Docker Compose</li>
-                            <li>Infrastructure as Code</li>
+                            <li>OpenAI API (GPT-4, GPT-3.5)</li>
+                            <li>Anthropic Claude</li>
+                            <li>Google Gemini</li>
+                            <li>Ollama (local LLMs)</li>
+                            <li>Pinecone</li>
+                            <li>LangChain</li>
+                            <li>LangGraph</li>
+                            <li>Prompt Engineering</li>
+                            <li>AI Agent Development</li>
+                            <li>Pandas</li>
                         </ul>
                     </div>
 
@@ -343,21 +302,19 @@
                         <h4>Databases</h4>
                         <ul>
                             <li>PostgreSQL</li>
+                            <li>Aurora</li>
                             <li>DynamoDB</li>
                             <li>MongoDB</li>
                         </ul>
                     </div>
 
                     <div class="about__skill-group">
-                        <h4>AI & Analytics</h4>
+                        <h4>Cloud & Infrastructure</h4>
                         <ul>
-                            <li>OpenAI API (GPT-4, GPT-3.5)</li>
-                            <li>Anthropic Claude</li>
-                            <li>Google Gemini</li>
-                            <li>Ollama (local LLMs)</li>
-                            <li>Prompt Engineering</li>
-                            <li>AI Agent Development</li>
-                            <li>Pandas</li>
+                            <li>AWS (DMS, Glue, Athena, Lambda, S3)</li>
+                            <li>Terraform (95% automation)</li>
+                            <li>Docker & Docker Compose</li>
+                            <li>Infrastructure as Code</li>
                         </ul>
                     </div>
 
